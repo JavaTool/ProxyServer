@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Main-Class: proxy.ProxyServer
+Bundle-ClassPath: lib/commons-configuration-1.8.jar 
+ lib/commons-lang-2.4.jar 
+ lib/commons-logging-1.1.1.jar 
+ lib/log4j-1.2.15.jar 
+ lib/mina-core-1.1.7.jar 
+ lib/slf4j-api-1.6.0.jar 
+ lib/slf4j-log4j12-1.6.1.jar 
+ lib/ServerIO.jar 
+

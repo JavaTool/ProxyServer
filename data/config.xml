@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peony>
+	<proxy>
+		<address>192.168.1.100</address>
+		<port>7002</port>
+		<password>proxy@pip2008</password>
+		<opcode>8</opcode>
+		<clientDisconnect>3</clientDisconnect>
+	</proxy>
+	<trustip>data/trustip.txt</trustip>
+	<opcodes>
+	    <opcode>
+	        <id>17</id>
+	        <method>sendServerList</method>
+	        <return>18</return>
+	    </opcode>
+	    <opcode>
+	        <id>19</id>
+	        <method>selectServer</method>
+	        <return>20</return>
+	    </opcode>
+	</opcodes>
+	<server>
+	    <id>0</id>
+	    <name>MAC测试</name>
+	    <ip>192.168.1.100</ip>
+	</server>
+	<server>
+	    <id>1</id>
+	    <name>蜗牛测试</name>
+	    <ip>192.168.1.101</ip>
+	</server>
+</peony>
