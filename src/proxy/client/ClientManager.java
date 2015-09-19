@@ -1,10 +1,5 @@
 package proxy.client;
 
-import io.DispatchPacket;
-import io.DispatchUADecoder;
-import io.Packet;
-import io.SyncInteger;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -13,6 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import net.io.mina.DispatchPacket;
+import net.io.mina.Packet;
+import net.io.mina.server.DispatchUADecoder;
+import net.io.util.SyncInteger;
 
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.logging.Log;
@@ -50,7 +50,7 @@ public final class ClientManager {
 	
 	private Map<Integer, ClientSession> freeSessions;
 	/**
-	 * ´úÀíIDÉú³ÉÆ÷
+	 * ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private SyncInteger ids = new SyncInteger(0);
 	
@@ -150,10 +150,10 @@ public final class ClientManager {
 		public void messageReceived(IoSession session, Object msg) throws Exception {
 			if (msg instanceof DispatchPacket) {
 				DispatchPacket dp = (DispatchPacket) msg;
-				int sessionId = (Integer) session.getAttribute(SESSION_ID); // Õâ¸öÊÇdispatch¸úproxyÁ¬½ÓµÄId£¬Ã¿¶àÒ»¸öproxy¾ÍÔö1
+				int sessionId = (Integer) session.getAttribute(SESSION_ID); // ï¿½ï¿½ï¿½ï¿½ï¿½dispatchï¿½ï¿½proxyï¿½ï¿½ï¿½Óµï¿½Idï¿½ï¿½Ã¿ï¿½ï¿½Ò»ï¿½ï¿½proxyï¿½ï¿½ï¿½ï¿½1
 				ClientSession cs = getSession(sessionId);
 				if (cs == null) {
-					sessionId = id_gen.incrementAndGet(); // Õâ¸öÊÇClientSessionÈ«¾ÖÎ¨Ò»µÄ±ê¼Ç£¬ËùÓÐµÄClientSession£¬²»ÂÛÊÇÈçºÎ½¨Á¢µÄ£¬¶¼ÓÐÒ»¸öÎ¨Ò»µÄId
+					sessionId = id_gen.incrementAndGet(); // ï¿½ï¿½ï¿½ï¿½ï¿½ClientSessionÈ«ï¿½ï¿½Î¨Ò»ï¿½Ä±ï¿½Ç£ï¿½ï¿½ï¿½ï¿½Ðµï¿½ClientSessionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Î¨Ò»ï¿½ï¿½Id
 					cs = new ClientSession(session, sessionId);
 					addSession(cs);
 				}

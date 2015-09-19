@@ -1,6 +1,6 @@
 package proxy;
 
-import io.Packet;
+import net.io.mina.Packet;
 
 import org.apache.mina.common.ByteBuffer;
 import org.apache.mina.common.IoSession;

@@ -1,7 +1,7 @@
 package proxy.server;
 
-import io.DispatchPacket;
-import io.Packet;
+import net.io.mina.DispatchPacket;
+import net.io.mina.Packet;
 
 import org.apache.mina.common.IoSession;
 

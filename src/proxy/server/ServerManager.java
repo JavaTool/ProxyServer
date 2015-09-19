@@ -1,13 +1,13 @@
 package proxy.server;
 
-import io.DispatchUADecoder;
-import io.Packet;
-
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import net.io.mina.Packet;
+import net.io.mina.server.DispatchUADecoder;
 
 import org.apache.commons.configuration.SubnodeConfiguration;
 import org.apache.commons.logging.Log;

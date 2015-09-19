@@ -1,7 +1,7 @@
 package proxy;
 
-import io.DispatchPacket;
-import io.Packet;
+import net.io.mina.DispatchPacket;
+import net.io.mina.Packet;
 
 public class DispatchPacketEx extends DispatchPacket {
 	
